@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.vitor.befree2.EmpActivity"
+    android:orientation="vertical"
+    android:background="@drawable/listabackground"
+    android:weightSum="1">
+
+    <com.vitor.befree2.utils.RoundedImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imgLogo"
+        android:layout_gravity="center"
+        android:layout_weight="0.11"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/txtNome"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textColor="#58CFAD"
+        android:layout_marginTop="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="165dp"
+                    android:layout_height="165dp"
+                    android:id="@+id/imgPedido"
+                    android:layout_weight="0.11"
+                    android:src="@mipmap/ic_pedido2"
+                    android:layout_gravity="center"
+                    android:onClick="fPedido"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Fazer pedido"
+                    android:id="@+id/txtPedido"
+                    android:textColor="#58CFAD"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    android:onClick="fPedido" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="165dp"
+                    android:layout_height="165dp"
+                    android:id="@+id/imgMesas"
+                    android:layout_weight="0.11"
+                    android:src="@mipmap/ic_mesas2"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Mesas"
+                    android:id="@+id/txtMesas"
+                    android:textColor="#58CFAD"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="165dp"
+                    android:layout_height="165dp"
+                    android:id="@+id/imgPromocoes"
+                    android:layout_weight="0.11"
+                    android:src="@mipmap/ic_promocoes"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Promoções"
+                    android:id="@+id/txtPromocoes"
+                    android:textColor="#58CFAD"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="165dp"
+                    android:layout_height="165dp"
+                    android:id="@+id/imgEstacionamento"
+                    android:layout_weight="0.11"
+                    android:src="@mipmap/ic_estacionamento"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Estacionamento"
+                    android:id="@+id/txtEstacionamento"
+                    android:textColor="#58CFAD"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
