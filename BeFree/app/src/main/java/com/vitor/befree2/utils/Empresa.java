@@ -32,6 +32,7 @@ public class Empresa implements Serializable{
             this.nome = json.getString("nomeShopping");
             JSONObject enderecoJson = json.getJSONObject("endereco");
             this.endereco = enderecoJson.getString("rua");
+            this.favorito = json.getBoolean("favorito") == true ? 1 : 0;
         } catch (JSONException e) {
             e.printStackTrace();
         }

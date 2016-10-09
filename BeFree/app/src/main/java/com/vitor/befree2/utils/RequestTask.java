@@ -25,6 +25,8 @@ import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -97,8 +99,8 @@ public class RequestTask extends AsyncTask<String,Void,String>{
     }
 
     public void AtualizaEmpresa(ArrayList list){
-        this.empresaAdapter = new EmpresaAdapter(activity, list);
 
+        this.empresaAdapter = new EmpresaAdapter(activity, list);
         lista = (ListView) activity.findViewById(R.id.listEstabelecimento);
         lista.setAdapter(empresaAdapter);
         lista.setOnItemClickListener(callEmpresa(activity));

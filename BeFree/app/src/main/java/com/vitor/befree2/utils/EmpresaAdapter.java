@@ -78,6 +78,13 @@ public class EmpresaAdapter extends BaseAdapter{
         logo.setImageResource(empresa.getLogo(i));
 
         TextView favorito = (TextView) layout.findViewById(R.id.txtFavorito);
+
+        if(empresa.getFavorito() == 1){
+            favorito.setCompoundDrawablesWithIntrinsicBounds(null,null,context.getResources().getDrawable(R.mipmap.ic_favorite_yes),null);
+        }else{
+            favorito.setCompoundDrawablesWithIntrinsicBounds(null,null,context.getResources().getDrawable(R.mipmap.ic_favorite_no),null);
+        }
+
         favorito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
