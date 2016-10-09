@@ -27,6 +27,8 @@
         <activity android:name=".EmpActivity" />
         <activity android:name=".ListaPedidoActivity" />
         <activity android:name=".ListaRestActivity"></activity>
+        <activity android:name=".MesaActivity"></activity>
+
     </application>
 
 </manifest>

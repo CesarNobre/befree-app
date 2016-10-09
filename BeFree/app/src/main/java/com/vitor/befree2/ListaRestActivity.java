@@ -44,11 +44,5 @@ public class ListaRestActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-//        lojaAdapter = new LojaAdapter(this,lojas);
-//
-//        lista = (ListView) findViewById(R.id.listLojas);
-//        lista.setAdapter(lojaAdapter);
-//        //lista.setOnItemClickListener(callLoja(this));
     }
 }

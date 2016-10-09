@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.vitor.befree2.utils.Empresa;
+import com.vitor.befree2.utils.MesaAdapter;
 
 import java.io.Serializable;
 
@@ -83,13 +84,21 @@ public class EmpActivity extends AppCompatActivity {
         params.putInt("position",position);
 
         Intent intent;
-        intent = new Intent(this, ListaRestActivity.class);
+
+        if(v.getId() == R.id.txtMesas || v.getId() == R.id.imgMesas){
+            intent = new Intent(this, MesaActivity.class);
+        } else{
+            intent = new Intent(this, ListaRestActivity.class);
+        }
         intent.putExtras(params);
         startActivity(intent);
+
     }
 
-    public void fMesas(View v){
-
+    public void fBuscar(View v){
+        Intent intent = new Intent(this, MesaActivity.class);
+//        intent.putExtras(params);
+        startActivity(intent);
     }
 
     public void fPromocoes(View v){

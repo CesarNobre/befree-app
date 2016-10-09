@@ -9,7 +9,6 @@ import com.vitor.befree2.utils.LojaAdapter;
 public class ListaPedidoActivity extends AppCompatActivity {
 
     ListView lista;
-    LojaAdapter lojaAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

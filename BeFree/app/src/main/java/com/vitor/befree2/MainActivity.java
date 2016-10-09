@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.vitor.befree2.utils.RequestUserTask;
+
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Login(View v){
-        Intent intLista = new Intent(this,ListaActivity.class);
-        startActivity(intLista);
+        RequestUserTask userTask = new RequestUserTask(this);
+        String url = "https://testecesao.mybluemix.net/api/account/"+ editUsuario.getText() + "/" + editSenha.getText();
+        userTask.execute(url);
     }
 }

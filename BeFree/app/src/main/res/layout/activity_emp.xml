@@ -81,7 +81,8 @@
                     android:id="@+id/imgMesas"
                     android:layout_weight="0.11"
                     android:src="@mipmap/ic_mesas2"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:onClick="fPedido"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -92,7 +93,8 @@
                     android:textColor="#58CFAD"
                     android:layout_gravity="center_horizontal|bottom"
                     android:layout_marginTop="8dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:onClick="fPedido"/>
 
             </FrameLayout>
 
