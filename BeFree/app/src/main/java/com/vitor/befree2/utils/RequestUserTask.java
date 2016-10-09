@@ -1,6 +1,7 @@
 package com.vitor.befree2.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.ListView;
@@ -24,9 +25,17 @@ import java.util.ArrayList;
 public class RequestUserTask  extends AsyncTask<String, Void, String>{
 
     private final Activity activity;
-
+    ProgressDialog progress;
     public RequestUserTask(Activity activity) {
         this.activity = activity;
+        progress = new ProgressDialog(activity);
+        progress.setTitle("Carregando");
+        progress.setMessage("Aguarde enquanto validamos seu login. :)");
+
+    }
+
+    protected void onPreExecute() {
+        this.progress.show();
     }
 
     @Override
@@ -37,6 +46,7 @@ public class RequestUserTask  extends AsyncTask<String, Void, String>{
             HttpURLConnection c = (HttpURLConnection) url.openConnection();
             if (c.getResponseCode() == 200) { //OK!!!!
                 json = Util.toString(c.getInputStream());
+                progress.hide();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,6 +57,9 @@ public class RequestUserTask  extends AsyncTask<String, Void, String>{
 
     @Override
     protected void onPostExecute(String json) {
+        if(progress.isShowing()){
+            progress.dismiss();
+        }
         if(json == ""){
             Toast.makeText(activity, "usuário ou senha errado", Toast.LENGTH_LONG).show();
         } else {
