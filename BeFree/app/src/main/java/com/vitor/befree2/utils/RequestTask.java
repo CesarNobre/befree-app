@@ -1,6 +1,7 @@
 package com.vitor.befree2.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -40,10 +41,19 @@ public class RequestTask extends AsyncTask<String,Void,String>{
     int opcao;
     ListView lista;
     EmpresaAdapter empresaAdapter;
+    ProgressDialog progress;
 
     public RequestTask(Activity activity, int opcao) {
         this.activity = activity;
         this.opcao = opcao;
+        progress = new ProgressDialog(activity);
+        progress.setTitle("Carregando");
+        progress.setMessage("Aguarde...");
+
+    }
+
+    protected void onPreExecute() {
+        this.progress.show();
     }
 
     @Override
@@ -78,6 +88,9 @@ public class RequestTask extends AsyncTask<String,Void,String>{
                 list.add(empresa);
             }
             AtualizaEmpresa(list);
+            if(this.progress.isShowing()){
+                this.progress.dismiss();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

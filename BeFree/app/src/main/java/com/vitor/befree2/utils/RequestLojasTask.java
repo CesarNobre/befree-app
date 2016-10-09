@@ -1,6 +1,7 @@
 package com.vitor.befree2.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.widget.ListView;
 
@@ -22,9 +23,18 @@ public class RequestLojasTask extends AsyncTask<String,Void,String> {
     private Activity activity;
     LojaAdapter lojaAdapter;
     ListView lista;
+    ProgressDialog progress;
 
     public RequestLojasTask(Activity activity) {
+
         this.activity = activity;
+        progress = new ProgressDialog(activity);
+        progress.setTitle("Carregando");
+        progress.setMessage("Aguarde...");
+    }
+
+    protected void onPreExecute() {
+        this.progress.show();
     }
 
     @Override
@@ -60,6 +70,10 @@ public class RequestLojasTask extends AsyncTask<String,Void,String> {
                 list.add(empresa);
             }
             AtualizaLojas(list);
+
+            if(this.progress.isShowing()){
+                this.progress.dismiss();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

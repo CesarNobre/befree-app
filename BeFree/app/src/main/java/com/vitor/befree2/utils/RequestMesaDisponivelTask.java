@@ -1,6 +1,7 @@
 package com.vitor.befree2.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -21,8 +22,13 @@ import java.util.ArrayList;
 
 public class RequestMesaDisponivelTask extends AsyncTask<String,Void,String> {
     private Activity activity;
-
-    public RequestMesaDisponivelTask(Activity activity){ this.activity = activity;}
+    ProgressDialog progress;
+    public RequestMesaDisponivelTask(Activity activity){
+        this.activity = activity;
+        progress = new ProgressDialog(activity);
+        progress.setTitle("Carregando");
+        progress.setMessage("Aguarde...");
+    }
 
     @Override
     protected String doInBackground(String... params) {
@@ -64,6 +70,10 @@ public class RequestMesaDisponivelTask extends AsyncTask<String,Void,String> {
             ImageView image;
             image = (ImageView)this.activity.findViewById(R.id.imgMesas);
             image.setImageResource(R.mipmap.ic_favorite_yes);
+        }
+
+        if(this.progress.isShowing()){
+            this.progress.dismiss();
         }
     }
 }

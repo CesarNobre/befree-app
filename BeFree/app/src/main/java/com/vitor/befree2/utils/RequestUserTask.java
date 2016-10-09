@@ -46,7 +46,6 @@ public class RequestUserTask  extends AsyncTask<String, Void, String>{
             HttpURLConnection c = (HttpURLConnection) url.openConnection();
             if (c.getResponseCode() == 200) { //OK!!!!
                 json = Util.toString(c.getInputStream());
-                progress.hide();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,7 +60,7 @@ public class RequestUserTask  extends AsyncTask<String, Void, String>{
             progress.dismiss();
         }
         if(json == ""){
-            Toast.makeText(activity, "usuário ou senha errado", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, "Usuário ou Senha Inválidos!", Toast.LENGTH_LONG).show();
         } else {
             Intent intLista = new Intent(activity, ListaActivity.class);
             activity.startActivity(intLista);
